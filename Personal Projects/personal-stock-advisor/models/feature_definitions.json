@@ -1,0 +1,24 @@
+{
+  "col_map": {
+    "company": "Stock Name",
+    "current_price": "Stock Price as of",
+    "pe_ratio": "Type",
+    "dividend_per_share": "Dividend Yield",
+    "dividend_yield": "Dividend Yield",
+    "net_income": "Net Income",
+    "sector": "Type",
+    "operating_cash_flow": "Operating Cashflow"
+  },
+  "input_features": [
+    "Stock Price as of",
+    "Type",
+    "Dividend Yield",
+    "Dividend Yield",
+    "Net Income",
+    "Operating Cashflow"
+  ],
+  "cat_features": [
+    "Type"
+  ],
+  "engineered": []
+}

@@ -1,0 +1,131 @@
+You are an expert machine-learning engineer. I want you to build a completely self-contained AI model from scratch, using only my Excel spreadsheet as the training/data source.
+
+Core requirement
+
+Do NOT use ChatGPT, OpenAI models/APIs, Gemini, Google AI models/APIs, Claude, Anthropic, Llama, Ollama, Hugging Face pretrained models, or any other pretrained/foundation model.
+
+I want to create my own model, trained entirely from the data contained in my Excel spreadsheet.
+
+What I want you to do
+
+1. Inspect my Excel spreadsheet
+    * Automatically locate the Excel file in the project.
+    * Read every sheet.
+    * Inspect all columns, rows, data types, missing values, duplicates, categorical values, numerical values, and relationships between columns.
+    * Determine what the spreadsheet represents without assuming a predefined schema.
+    * Produce a clear summary of the dataset before training.
+2. Design the model around the actual data
+    * Do not blindly assume this is a classification, regression, chatbot, or NLP problem.
+    * Analyze the structure of the spreadsheet and determine the most appropriate machine-learning architecture for generating useful outputs from this data.
+    * Explain your reasoning in the project documentation.
+    * If the spreadsheet contains primarily numerical/tabular information, prioritize a tabular ML architecture rather than pretending it is a language model.
+    * If text exists, determine how that text should be represented without using pretrained embeddings or pretrained language models.
+3. Build the model from scratch
+    * Implement the model architecture yourself using standard mathematical/ML libraries where appropriate.
+    * Libraries such as NumPy, Pandas, SciPy, and PyTorch are allowed as computational frameworks.
+    * You may use standard optimization algorithms, matrix operations, neural-network layers, activation functions, loss functions, etc.
+    * You may NOT download or import pretrained weights, pretrained embeddings, pretrained tokenizers, foundation models, or external model checkpoints.
+    * The model must learn its parameters from my Excel data.
+4. Create a complete training pipeline
+    * Data loading
+    * Data cleaning
+    * Feature extraction/encoding
+    * Train/validation/test split
+    * Normalization/scaling where appropriate
+    * Model initialization
+    * Training
+    * Validation
+    * Evaluation
+    * Saving the trained model
+    * Loading the trained model later
+    * Generating predictions/outputs
+5. The model must create its own output
+    * After training, provide an interactive interface where I can give the model an input.
+    * The model should process that input using the patterns it learned from my Excel spreadsheet.
+    * It should generate its own output/prediction based on its learned parameters.
+    * Do not simply retrieve an existing row from the spreadsheet and return it.
+    * Do not hard-code answers.
+    * Do not use an external AI API to generate the response.
+6. Prevent data leakage
+    * Do not allow information from the test set to influence training.
+    * Fit preprocessing transformations only on the training data.
+    * Clearly separate training, validation, and test data.
+    * Report appropriate evaluation metrics.
+7. Make the project reproducible
+    Create a clean project structure such as:
+    data/
+    src/
+    models/
+    outputs/
+    tests/
+    Include:
+    * Training script
+    * Inference/prediction script
+    * Data-processing module
+    * Model-definition module
+    * Evaluation module
+    * Configuration file if useful
+    * README with setup and usage instructions
+    * Requirements file
+8. Use local computation only
+    * The model must run locally.
+    * No calls to OpenAI, Gemini, Claude, Ollama, or other AI inference services.
+    * No external API calls for generating predictions.
+    * No pretrained model downloads.
+    * No internet-dependent inference.
+9. Make the model genuinely learn
+    * Use a proper training loop.
+    * Initialize model parameters independently.
+    * Train using the Excel dataset.
+    * Save the learned weights.
+    * Make inference use those saved weights.
+    * Include training metrics and loss curves if appropriate.
+10. Do not fabricate data
+    * The Excel spreadsheet is the ONLY dataset.
+    * Do not silently supplement it with another dataset.
+    * Do not scrape the internet for additional training data.
+    * Do not generate synthetic training data unless absolutely required by the architecture; if it is required, stop and explain why before doing it.
+
+Important distinction
+
+I am not asking you to build an application that calls an AI model.
+
+I am asking you to build the actual machine-learning model itself, where the learned parameters come from my Excel spreadsheet.
+
+The final system should conceptually work like:
+
+Excel spreadsheet → preprocessing → my model → learned parameters → new input → my model → generated output
+
+rather than:
+
+Excel spreadsheet → ChatGPT/Gemini/Claude/etc. → output
+
+Before writing substantial code
+
+First inspect the Excel spreadsheet and determine:
+
+* What the data contains
+* Number of rows and columns
+* Column types
+* Missing data
+* Potential target/output variables
+* Potential input/features
+* Whether this is best treated as regression, classification, clustering, ranking, forecasting, recommendation, generative modeling, or another ML problem
+* What architecture you recommend
+* Why that architecture makes sense
+
+Then implement the complete system.
+
+Do not ask me to manually describe the spreadsheet if you can inspect it yourself.
+
+At the end, give me exact commands for:
+
+1. Installing dependencies
+2. Training the model
+3. Evaluating the model
+4. Saving the trained model
+5. Running the model interactively
+6. Giving it new input
+7. Getting its generated output
+
+The finished project should be a genuinely locally trained model built from scratch using my Excel spreadsheet, with no ChatGPT, Gemini, Claude, Ollama, pretrained models, or external AI services involved.
